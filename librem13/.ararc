@@ -1,0 +1,122 @@
+##
+# Ethereum Web3 configuration
+##
+[web3]
+  #provider  = "http://127.0.0.1:8545"
+  #provider = "ws://127.0.0.1:8546"
+  #network_id = "privatenet"
+  #network_id = "testnet"
+  #network_id = "mainnet"
+##
+
+# Private Ethereum network configuration
+##
+[web3.privatenet]
+  #provider[] = "http://127.0.0.1:8545"
+  #provider[] = "ws://127.0.0.1:8546"
+
+##
+# Test Ethereum network configuration
+##
+[web3.testnet]
+  #provider[] = "wss://ropsten.infura.io/ws"
+
+##
+# Main Ethereum network configuration
+##
+[web3.mainnet]
+  #provider[] = "wss://mainnet.infura.io/ws"
+
+##
+# General Ara network configuration
+##
+[network]
+  #keyring = "/mnt/ara/keyrings/ara1.pub"
+
+##
+# Ara DNS network configuration. Servers are listed
+# in the order they should be queried. Some DNS servers
+# respond to _normal_ DNS queries giving answers for _all_
+# types of records (8.8.8.8,1.1.1.1,etc) and others store SRV
+# and TXT records used for peer discovery.
+##
+[network.dns]
+  server[] = "0.0.0.0"
+  ## (CloudFlare/APNIC)
+  server[] = "1.1.1.1"
+  ## (Google)
+  server[] = "8.8.8.8"
+  ## (werle)
+  server[] = "discovery1.cafe.network"
+  ## (ARA)
+  server[] = "discovery1.ara.one"
+  server[] = "discovery1.ara.local"
+  ## (DAT)
+  server[] = "discovery1.datprotocol.com"
+  server[] = "discovery2.datprotocol.com"
+
+##
+# Ara DHT network configuration. Bootstrap nodes allow
+# software running locally to discover other peers based
+# on discovery keys using a distributed hash table (DHT).
+##
+[network.dht]
+  bootstrap[] = "localhost:6881"
+  ## (werle) cafe network servers
+  bootstrap[] = "discovery1.cafe.network:6881"
+  ## (ARA)
+  bootstrap[] = "discovery1.ara.one:6881"
+  bootstrap[] = "discovery.ara.local:6881"
+  ## (DAT)
+  bootstrap[] = "bootstrap1.datprotocol.com:6881"
+  bootstrap[] = "bootstrap2.datprotocol.com:6881"
+  bootstrap[] = "bootstrap3.datprotocol.com:6881"
+  bootstrap[] = "bootstrap4.datprotocol.com:6881"
+
+## TODO(werle): AKR should use this
+#[network.registry.keyring]
+  #server = "keyrings.ara.one"
+
+##
+# Ara identity network configuration
+##
+[network.identity]
+  #keyring = "/home/werle/.ara/keyrings/alpha1"
+  #keyring = "http://keyrings.ara.one/1.0/did:ara:c04562dbf5c3ef3f091633e0482fb1308b8d4496d515b6f0bc73f1a7f95bc0d7/ara-production-public"
+  keyring = "/home/josephwerle/.ara/keyrings/ara1.pub"
+  ## (pure.ara.link)
+  #whoami = "pure.ara.link"
+  whoami = "did:ara:510df651b3479623db6bef4f540a86eb58333b0b4083b877cd2b8fb32e630dca"
+  ## ara1
+  secret = "ara-production"
+
+##
+# Ara identity resolver network node configuration
+##
+[network.identity.resolver]
+  network = "resolver1"
+  #address = "127.0.0.68"
+  address = "resolver.ara.local"
+  port = 80
+
+  ## Resolution targets tried in the order in which
+  ## they appear in the `server[]` array
+  servers[] = "https://resolver.ara.local"
+  servers[] = "https://resolver.ara.one"
+  servers[] = "http://identity1.cafe.network"
+
+[network.identity.resolver.cache]
+  nodes[] = "cafe.network"
+  nodes[] = "did:ara:c04562dbf5c3ef3f091633e0482fb1308b8d4496d515b6f0bc73f1a7f95bc0d7"
+
+##
+# Identity archiver network node configuration
+##
+[network.identity.archiver]
+  network = "archiver1"
+
+[network.lynxs.archiver]
+  #network = "archiver1"
+  #keyring = "/home/werle/.ara/keyrings/alpha1.pub"
+  #secret = "secrets"
+
