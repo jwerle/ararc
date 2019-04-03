@@ -82,11 +82,11 @@
 ##
 [network.identity]
   #keyring = "/home/werle/.ara/keyrings/alpha1"
-  #keyring = "http://keyrings.ara.one/1.0/did:ara:c04562dbf5c3ef3f091633e0482fb1308b8d4496d515b6f0bc73f1a7f95bc0d7/ara-production-public"
-  keyring = "/home/josephwerle/.ara/keyrings/ara1.pub"
+  keyring = "http://keyrings.ara.one/1.0/did:ara:c04562dbf5c3ef3f091633e0482fb1308b8d4496d515b6f0bc73f1a7f95bc0d7/ara-production-public"
+  #keyring = "/home/josephwerle/.ara/keyrings/ara1.pub"
   ## (pure.ara.link)
   #whoami = "pure.ara.link"
-  whoami = "did:ara:510df651b3479623db6bef4f540a86eb58333b0b4083b877cd2b8fb32e630dca"
+  whoami = "did:ara:a1616a6b8d985b3e339ba308e4f6eaaccec992e2b0ca498e56fc918af98a0e8a"
   ## ara1
   secret = "ara-production"
 
